@@ -36,7 +36,7 @@ if (!$con->select_db($dbname)) {
 
 $query = "create table if not EXISTS admins(id int auto_increment primary key,name varchar(200) not null,type enum('admin', 'moderator') not null,password varchar(255) not null)";
 if (!$con->query($query)) {
-    $error = array("message" => "could not create users table", "status" => false);
+    $error = array("message" => "could not create admins table", "status" => false);
     echo json_encode($error);
     //$con->error;
     die();
@@ -53,7 +53,7 @@ $query = "create table if not exists contacts
 	message text not null
 )";
 if (!$con->query($query)) {
-    $error = array("message" => "could not create players table", "status" => false);
+    $error = array("message" => "could not create contacts table", "status" => false);
     echo json_encode($error);
     //$con->error;
     die();
@@ -69,7 +69,7 @@ $query = "create table if not exists portfolio
 	technology varchar(200) not null
 )";
 if (!$con->query($query)) {
-    $error = array("message" => "could not create sessions table", "status" => false);
+    $error = array("message" => "could not create portfolio table", "status" => false);
     echo json_encode($error);
     //$con->error;
     die();
@@ -82,7 +82,7 @@ $query = "create table if not exists skills
 	icon varchar(255) not null
 )";
 if (!$con->query($query)) {
-    $error = array("message" => "could not create sessions table", "status" => false);
+    $error = array("message" => "could not create skills table", "status" => false);
     echo json_encode($error);
     //$con->error;
     die();
@@ -99,7 +99,7 @@ $query = "create table if not exists testimonials
 	link varchar(200) null
 )";
 if (!$con->query($query)) {
-    $error = array("message" => "could not create sessions table", "status" => false);
+    $error = array("message" => "could not create testimonials table", "status" => false);
     echo json_encode($error);
     //$con->error;
     die();
